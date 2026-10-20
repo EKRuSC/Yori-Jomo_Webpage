@@ -1,0 +1,95 @@
+---
+import Button from "./button.astro";
+---
+
+<section id="section3">
+  <div class="grid">
+    <div id="left" class="thumbnail">
+      <div class="h2_wrapper">
+        <h2>sko</h2>
+      </div>
+      <Button buttext="shop sko" />
+    </div>
+    <div id="right" class="thumbnail">
+      <div class="h2_wrapper">
+        <h2>bælter</h2>
+      </div>
+      <Button buttext="shop bælter" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    grid-template-rows: repeat(20, var(--f-lh_100));
+  }
+
+  .thumbnail {
+    /*|GRID-FIT|*/
+    grid-column: span 6;
+    grid-row: 1/-1;
+    /*|LAYOUT|*/
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(auto-fill, var(--f-lh_100));
+    column-gap: var(--f-lh_100);
+    row-gap: 8px;
+    @media screen and (width <= 1024px) {
+      grid-column: span 4;
+      button {
+        grid-column: 1/-1;
+      }
+    }
+
+    .h2_wrapper {
+      /*|GRID-FIT|*/
+      grid-row: 1/-5;
+      /*|LAYOUT|*/
+      container-name: heading;
+      container-type: size;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        /*|STYLING|*/
+        writing-mode: sideways-lr;
+        font-size: clamp(var(--f-sz_300), 10cqh, 100cqw);
+      }
+    }
+    button {
+      /*|GRID-FIT|*/
+      grid-column: 1/4;
+      grid-row: span 2/-3;
+      /*|LAYOUT|*/
+      margin-left: 12.5%;
+    }
+    @media screen and (width <= 1024px) {
+      button {
+        grid-column: 1/6;
+        justify-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  /*----------|SHOES|----------*/
+  #left {
+    /*|STYLING|*/
+    background-color: #999;
+    background-image: url(../assets/images/Yori-Jomo_img_4.png);
+    background-repeat: no-repeat;
+    background-size: fill;
+    background-position: center;
+  }
+
+  /*----------|BELTS|----------*/
+  #right {
+    /*|STYLING|*/
+    background-image: url(../assets/images/Yori-Jomo_img_5.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+</style>

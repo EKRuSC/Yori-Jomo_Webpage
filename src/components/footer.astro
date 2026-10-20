@@ -1,0 +1,170 @@
+---
+import Button from "./button.astro";
+import IconInstagram from "../assets/graphics/Yori-Jomo_Icon-Instagram.svg";
+import IconFacebook from "../assets/graphics/Yori-Jomo_Icon-Facebook.svg";
+---
+
+<footer>
+  <div class="grid">
+    <div id="logo">
+      <p class="p_logo">yori jomo</p>
+    </div>
+    <div id="links">
+      <div id="left" class="links">
+        <p>om yori jomo</p>
+        <p>kundeservice</p>
+        <p>vilkår</p>
+        <p>politikker</p>
+      </div>
+      <div id="right" class="links">
+        <p>© 2026 yori jomo</p>
+        <p>instagram</p>
+        <p>kontakt</p>
+      </div>
+    </div>
+    <div id="signup">
+      <h3>tilmeld dig vores nyhedsbrev</h3>
+      <input type="email" name="emailinput" placeholder="din_email@adresse.her" />
+      <label for="emailinput">
+        <p class="p_subtle">Emailadresse</p>
+      </label>
+      <Button buttext="opskriv" />
+    </div>
+    <div id="socials">
+      <a class="icon_wrapper" href=""><IconFacebook class="icon" /></a>
+      <a class="icon_wrapper" href=""><IconInstagram class="icon" /></a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  /*----------|LOGO_CONTAINER|----------*/
+  #logo {
+    /*|GRID-FIT|*/
+    grid-column: 1;
+    grid-row: 1 / -1;
+    /*|LAYOUT|*/
+    container-name: logo;
+    container-type: size;
+    justify-content: center;
+    .p_logo {
+      writing-mode: sideways-lr;
+      font-size: clamp(var(--f-sz_200), 10cqh, 100cqw);
+    }
+  }
+
+  /*----------|LINKS|----------*/
+  #links {
+    /*|GRID-FIT|*/
+    grid-column: 3 / 7;
+    grid-row: 3 / span 8;
+    /*|LAYOUT|*/
+    display: flex;
+    flex-direction: row;
+    gap: 1lh;
+    .links {
+      width: 100%;
+      display: grid;
+      grid-template-rows: repeat(auto-fill, var(--f-lh_100));
+      row-gap: 8px;
+      p {
+        grid-row: span 2;
+        color: var(--clr_brown-light);
+        text-transform: capitalize;
+      }
+    }
+  }
+  @media screen and (width <= 1024px) {
+    #links {
+      /*|GRID-FIT|*/
+      grid-column: 2 / 6;
+      grid-row: 3 / span 8;
+      /*|LAYOUT|*/
+      display: flex;
+      flex-direction: row;
+      gap: 1lh;
+    }
+  }
+
+  /*----------|SIGNUP|----------*/
+  #signup {
+    /*|GRID-FIT|*/
+    grid-column: 8 / -2;
+    grid-row: 3 / span 8;
+    /*|LAYOUT|*/
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto-fill, var(--f-lh_100));
+    column-gap: var(--f-lh_100);
+    row-gap: 8px;
+    h3 {
+      grid-column: 1/-1;
+      grid-row: 1 / span 2;
+    }
+    label {
+      grid-column: 1/-1;
+      grid-row: 3;
+      color: var(--clr_brown-light);
+    }
+    input {
+      /*|GRID-FIT|*/
+      grid-column: 1/-1;
+      grid-row: 4 / span 2;
+      /*|LAYOUT|*/
+      padding: var(--f-sz_100);
+      /*|STYLING|*/
+      color: var(--clr_black);
+      background-color: var(--clr_brown-light);
+      border-radius: var(--f-sz_100);
+    }
+    input::placeholder {
+      color: var(--clr_brown-dark);
+    }
+    button {
+      grid-column: 1/-1;
+      grid-row: 7 / span 2;
+    }
+  }
+  @media screen and (width <= 1024px) {
+    #signup {
+      /*|GRID-FIT|*/
+      grid-column: 6 / -1;
+      grid-row: 3 / span 8;
+      /*|LAYOUT|*/
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(auto-fill, var(--f-lh_100));
+      column-gap: var(--f-lh_100);
+      row-gap: 8px;
+      button {
+        grid-column: 1/-1;
+        grid-row: 7 / span 2;
+      }
+    }
+  }
+
+  /*----------|SOCIALS|----------*/
+  #socials {
+    /*|GRID-FIT|*/
+    grid-column: -3/-1;
+    grid-row: 12 / span 2;
+    /*|LAYOUT|*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--f-lh_100);
+    .icon_wrapper {
+      aspect-ratio: 1/1;
+      height: 100%;
+      width: fit-content;
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon {
+        height: 100%;
+        width: 100%;
+        filter: invert(1);
+      }
+    }
+  }
+</style>

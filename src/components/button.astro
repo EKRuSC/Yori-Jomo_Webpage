@@ -1,0 +1,24 @@
+---
+const { buttext } = Astro.props;
+---
+
+<button>
+  <p class="p_button">{buttext}</p>
+</button>
+
+<style>
+  button {
+    /*|LAYOUT|*/
+    width: fit-content;
+    margin: -4px;
+    padding: var(--f-sz_100) var(--f-lh_100);
+    /*|STYLING|*/
+    background-color: transparent;
+    border-width: 4px;
+    border-style: solid;
+    border-color: inherit;
+  }
+  p {
+    text-justify: center;
+  }
+</style>

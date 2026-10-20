@@ -1,0 +1,50 @@
+---
+import ProductCard from "./product_card.astro";
+---
+
+<section id="section2">
+  <h2>nyheder</h2>
+  <div id="deals" class="grid">
+    <ProductCard />
+    <ProductCard />
+    <ProductCard />
+  </div>
+
+  <style>
+    section {
+      padding: 0 var(--f-lh_100);
+      display: flex;
+      flex-direction: column;
+      gap: calc(var(--f-lh_100) + 16px);
+      /*----------|HEADING|----------*/
+      h2 {
+        /*|LAYOUT|*/
+        height: calc(var(--f-lh_100) * 2 + 8px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /*----------|PRODUCTS|----------*/
+      #deals {
+        /*|LAYOUT|*/
+        padding: 0;
+        .card {
+          /*|GRID-FIT|*/
+          grid-column: span 4;
+        }
+      }
+    }
+    @media screen and (width <= 1024px) {
+      #deals {
+        .card {
+          grid-column: span 2;
+          margin: 0;
+        }
+        .card:last-of-type {
+          grid-column: 3 / span 4;
+        }
+      }
+    }
+  </style>
+</section>

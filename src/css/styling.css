@@ -1,0 +1,68 @@
+html {
+  /*----------|GENERAL|----------*/
+  header {
+    color: var(--clr_white);
+    .icon {
+      filter: invert(1);
+    }
+  }
+  #hero {
+    color: var(--clr_white);
+  }
+  #section1 {
+    #content {
+      color: var(--clr_white);
+      background-color: var(--clr_brown-light);
+    }
+  }
+  #section3 {
+    color: var(--clr_white);
+  }
+  footer {
+    color: var(--clr_white);
+    background-color: var(--clr_brown-dark);
+  }
+
+  /*----------|ELEMENTS|----------*/
+  input {
+    background-color: transparent;
+    border: none;
+  }
+  #button_main {
+    width: 25%;
+    background-color: #9f9f9f;
+  }
+
+  /*----------|EFFECTS|----------*/
+  .card {
+    transition: 200ms ease;
+  }
+  .card:hover {
+    scale: 101%;
+    box-shadow: 0 4px 4px var(--clr_brown-light_trans);
+    cursor: pointer;
+  }
+  .card:active {
+    scale: 100%;
+    box-shadow: inset 0 4px 4px var(--clr_brown-light_trans);
+    #image {
+      background-color: var(--clr_brown-light_trans);
+    }
+  }
+
+  button {
+    transition: 200ms ease;
+  }
+  button:hover {
+    border-color: transparent;
+    background-color: var(--clr_brown-light);
+    cursor: pointer;
+    p {
+      color: var(--clr_white);
+    }
+  }
+  button:active {
+    border-color: var(--clr_black);
+    background-color: var(--clr_brown-dark);
+  }
+}

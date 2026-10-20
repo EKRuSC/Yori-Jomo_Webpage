@@ -1,0 +1,73 @@
+html {
+  /*-----|RESET|-----*/
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  /*-----+-----+-----*/
+
+  /*----------+----------+----------|LAYOUT|----------*/
+  /*----------+----------|GENERAL|----------*/
+  /*----------|PAGE|----------*/
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    padding-bottom: calc(var(--f-lh_300) * 4);
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--f-lh_300) * 4);
+  }
+  /*----------|GRIDS|----------*/
+  .grid {
+    max-width: 1920px;
+    width: 100%;
+    padding: 0 var(--f-sz_100);
+    justify-self: center;
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: var(--f-lh_100);
+    row-gap: 8px;
+  }
+  @media screen and (width <= 1024px) {
+    .grid {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+  header > .grid {
+    grid-template-rows: repeat(2, var(--f-lh_100));
+  }
+  footer > .grid {
+    grid-template-rows: repeat(14, var(--f-lh_100));
+  }
+  #hero > .grid {
+    grid-template-rows: repeat(26, var(--f-lh_100));
+  }
+  /*----------+----------|ELEMENTS|----------*/
+  #logo {
+    display: flex;
+    align-items: center;
+  }
+  #section_but {
+    grid-template-rows: repeat(5, var(--f-lh_100));
+    button {
+      grid-column: 5 / span 4;
+      grid-row: 2 / span 3;
+      height: auto;
+      width: auto;
+      p {
+        font-size: var(--f-sz_300);
+        line-height: var(--f-lh_300);
+      }
+    }
+    @media screen and (width <= 1024px) {
+      button {
+        grid-column: 3 / span 4;
+      }
+    }
+  }
+}

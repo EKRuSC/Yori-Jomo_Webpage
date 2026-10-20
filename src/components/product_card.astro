@@ -1,0 +1,46 @@
+<div class="card">
+  <div id="grid">
+    <div id="image"></div>
+    <h3>BRAND - Product Name - Colour</h3>
+    <p>DKK 1234,-</p>
+  </div>
+</div>
+
+<style>
+  .card {
+    margin: 0 var(--f-lh_100);
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(17, var(--f-lh_100));
+      row-gap: 8px;
+    }
+    #image {
+      /*|GRID-FIT|*/
+      grid-column: 1/-1;
+      grid-row: 1 / -1;
+      /*|STYLING|*/
+      background-image: url(../assets/images/Yori-Jomo_prod-img.png);
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: 50% calc(50% - 2 * var(--f-lh_100) - 16px);
+      background-color: var(--clr_grey-light);
+    }
+    h3,
+    p {
+      padding: 0 var(--f-lh_100);
+    }
+    h3 {
+      /*|GRID-FIT|*/
+      grid-column: 1/-1;
+      grid-row: -6/-4;
+      /*|LAYOUT|*/
+      align-self: center;
+    }
+    p {
+      /*|GRID-FIT|*/
+      grid-column: 1/-1;
+      grid-row: -4/-3;
+    }
+  }
+</style>
